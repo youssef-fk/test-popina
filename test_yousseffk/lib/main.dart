@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_yousseffk/src/config/di.dart';
-import 'package:test_yousseffk/src/ui/items/items_page.dart';
+import 'package:test_yousseffk/src/ui/orders/orders_page.dart';
 
 ///
 /// flutter pub run build_runner watch --delete-conflicting-outputs
@@ -23,8 +23,9 @@ class MyApp extends StatelessWidget {
       title: 'yousseffk',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Color(0xfff7f8f9),
       ),
-      home: const ItemsPage(),
+      home: const OrdersPage(),
     );
   }
 }

@@ -164,13 +164,14 @@ class __$OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_OrderModel implements _OrderModel {
+class _$_OrderModel extends _OrderModel {
   const _$_OrderModel(
       {required this.id,
       required this.object,
       required this.table,
       required this.guests,
-      required this.items});
+      required this.items})
+      : super._();
 
   factory _$_OrderModel.fromJson(Map<String, dynamic> json) =>
       _$$_OrderModelFromJson(json);
@@ -223,13 +224,14 @@ class _$_OrderModel implements _OrderModel {
   }
 }
 
-abstract class _OrderModel implements OrderModel {
+abstract class _OrderModel extends OrderModel {
   const factory _OrderModel(
       {required int id,
       required String object,
       required String table,
       required int guests,
       required List<ItemModel> items}) = _$_OrderModel;
+  const _OrderModel._() : super._();
 
   factory _OrderModel.fromJson(Map<String, dynamic> json) =
       _$_OrderModel.fromJson;

@@ -9,6 +9,8 @@ part 'order_model.g.dart';
 
 @freezed
 class OrderModel with _$OrderModel {
+  const OrderModel._();
+
   @JsonSerializable(explicitToJson: true)
   const factory OrderModel({
     required int id,
@@ -19,4 +21,7 @@ class OrderModel with _$OrderModel {
   }) = _OrderModel;
 
   factory OrderModel.fromJson(Map<String, dynamic> json) => _$OrderModelFromJson(json);
+
+  int get totalPrice => items.fold(0, (previousValue, element) => previousValue + element.price);
+  String get currency => items.isEmpty ? '' : items.first.currency;
 }

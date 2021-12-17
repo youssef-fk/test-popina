@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:get/get_connect.dart';
 import 'package:test_yousseffk/src/models/order_model.dart';
 
@@ -9,7 +11,7 @@ class OrdersNetworkService extends GetConnect {
       throw Exception('There has been an issue fetching the data');
     }
 
-    final ordersJson = response.body['orders'] as List;
+    final ordersJson = json.decode(response.body)['orders'] as List;
 
     return ordersJson.map((e) => OrderModel.fromJson(e)).toList();
   }
