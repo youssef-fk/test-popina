@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:test_yousseffk/src/config/asset_colors.dart';
 import 'package:test_yousseffk/src/models/order_model.dart';
+import 'package:test_yousseffk/src/ui/items/items_page.dart';
 
 class OrderListTile extends StatelessWidget {
   const OrderListTile({Key? key, required this.order}) : super(key: key);
@@ -16,7 +18,7 @@ class OrderListTile extends StatelessWidget {
       margin: const EdgeInsets.all(0),
       child: Material(
         child: InkWell(
-          onTap: () {},
+          onTap: () => Get.to(() => ItemsPage(order: order)),
           child: SizedBox(
             height: leftBoxSize,
             child: Row(

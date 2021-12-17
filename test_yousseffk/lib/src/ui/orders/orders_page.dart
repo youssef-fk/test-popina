@@ -15,7 +15,6 @@ class OrdersPage extends GetView<OrdersService> {
       return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          foregroundColor: AssetColors.boldColor,
           titleTextStyle: TextStyle(
             fontWeight: FontWeight.w300,
             color: AssetColors.boldColor,
@@ -24,20 +23,18 @@ class OrdersPage extends GetView<OrdersService> {
           title: Text('${orderList.length} commandes'),
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(12),
-          child: orderList.isEmpty
-              ? const Center(child: Text('Orders list is empty !'))
-              : ListView.separated(
-                  separatorBuilder: (context, index) => const SizedBox(height: 8),
-                  itemCount: orderList.length,
-                  itemBuilder: (context, index) {
-                    final order = orderList.elementAt(index);
+        body: orderList.isEmpty
+            ? const Center(child: Text('Orders list is empty !'))
+            : ListView.separated(
+                padding: const EdgeInsets.all(12),
+                separatorBuilder: (context, index) => const SizedBox(height: 8),
+                itemCount: orderList.length,
+                itemBuilder: (context, index) {
+                  final order = orderList.elementAt(index);
 
-                    return OrderListTile(order: order);
-                  },
-                ),
-        ),
+                  return OrderListTile(order: order);
+                },
+              ),
       );
     });
   }
