@@ -3,6 +3,10 @@ import 'package:get/get.dart';
 import 'package:test_yousseffk/src/config/di.dart';
 import 'package:test_yousseffk/src/ui/items/items_page.dart';
 
+///
+/// flutter pub run build_runner watch --delete-conflicting-outputs
+///
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
