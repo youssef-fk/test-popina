@@ -14,7 +14,7 @@ class OrderModel with _$OrderModel {
     required int id,
     required String object,
     required String table,
-    required String guests,
+    required int guests,
     required List<ItemModel> items,
   }) = _OrderModel;
 
