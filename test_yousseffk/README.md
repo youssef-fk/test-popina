@@ -17,3 +17,5 @@ I have added
 Added initial data models for order and items.
 
 Added a converter for parsing the `color string` to a `color object`.
+
+Tested data models serialization and deserialization from json response sample
